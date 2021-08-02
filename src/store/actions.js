@@ -1,10 +1,10 @@
 // https://vuex.vuejs.org/en/actions.html
-import cosmic from '@/plugins/cosmic'
+import bucket from '@/plugins/cosmic'
 
 export default {
   initCosmic: ({commit}) => {
     commit('LOADING')
-    return cosmic.getObjects().then(data => {
+    return bucket.getObjects().then(data => {
       // Set Settings State
       let settings = data.objects.filter(obj => {
         return obj.slug === 'global'
@@ -102,7 +102,7 @@ export default {
       }
     }
 
-    cosmic.addObject(params).then(() => {
+    bucket.addObject(params).then(() => {
       //console.log(data.object)
       //console.log('post:', state.postComments)
       commit('SUCCESS')
