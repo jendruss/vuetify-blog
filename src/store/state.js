@@ -1,6 +1,7 @@
 // https://vuex.vuejs.org/en/state.html
 
 export default {
+  leadingColor: "#dd7600",
   drawer: false,
   postDialog: false,
   activePost: null,
@@ -13,11 +14,6 @@ export default {
   posts: [],
   comments: [],
   postComments: [],
-  menu: [
-    { icon: 'mdi-home-outline', title: 'Home', link: '/' },
-    { icon: 'mdi-information-outline', title: 'About', link: '/about' },
-    { icon: 'mdi-email-outline', title: 'Contact', link: '/contact' }
-  ],
   settings: {},
   socialSettings: {}
 }

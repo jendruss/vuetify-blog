@@ -10,13 +10,9 @@ import store from '@/store/index'
 import DateFilter from '@/filters/Date'
 
 // Global Components
-import Toolbar from '@/components/Navigation/Toolbar'
 import PostDialog from '@/components/Posts/PostDialog'
-import Footer from '@/components/Navigation/Footer'
 
-Vue.component('app-toolbar', Toolbar)
 Vue.component('app-post-dialog', PostDialog)
-Vue.component('app-footer', Footer)
 
 Vue.config.productionTip = false
 
@@ -34,7 +30,7 @@ Vue.filter('tailing', (value, tail) => {
   return value + tail
 })
 
-Vue.prototype.$siteName = process.env.VUE_APP_TITLE || 'CosmicifyApp'
+Vue.prototype.$siteName = process.env.VUE_APP_TITLE
 
 new Vue({
   router,

@@ -1,42 +1,29 @@
 <template>
   <v-app>
-    <div class="text-xs-center" v-if="loading">
-      <v-progress-circular
-        :size="50"
-        color="green"
-        indeterminate
-      ></v-progress-circular>
-    </div>
-    <app-toolbar color="primary" v-if="!loading"></app-toolbar>
-    <!-- <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Cosmicify</span>
-        <span class="font-weight-light"> MATERIAL BLOG</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-toolbar> -->
-
-    <v-content v-if="!loading">
-      <transition appear name="fade">
-        <router-view></router-view>
-      </transition>
-    </v-content>
-
-    <app-footer v-if="!loading"></app-footer>
+    <v-container bg fill-height grid-list-md text-xs-center v-if="loading">
+      <v-layout row wrap align-center>
+        <v-flex>
+          <v-progress-circular
+            :size="70"
+            color="red"
+            indeterminate
+          ></v-progress-circular>
+          </v-flex>
+      </v-layout>
+    </v-container>
+      <Layout v-if="!loading"/>
   </v-app>
 </template>
 
 <script>
+import Layout from './components/layout/Layout.vue';
 import { mapGetters } from 'vuex'
+
 export default {
   name: 'App',
+  components: {
+    Layout,
+  },
   metaInfo: {
     title: 'App',
     titleTemplate: '%s | '+process.env.VUE_APP_TITLE,

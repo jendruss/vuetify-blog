@@ -18,19 +18,14 @@ export default [
     component: loadView('Home')
   },
   {
+    path: '/blog',
+    name: 'Blog',
+    component: loadView('Blog')
+  },
+  {
     path: '/post/:id',
     name: 'Post',
     component: loadView('Home')
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: loadView('About')
-  },
-  {
-    path: '/contact',
-    name: 'Contact',
-    component: loadView('Contact')
   },
   {
     path: '/404',
